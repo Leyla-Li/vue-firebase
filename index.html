@@ -23,7 +23,8 @@
             <p>I earn {{  wage }} per hour.</p>
             <button v-on:click='changeWage(1)'>Wage increase by 1$</button>   
             <button v-on:click='wage--'>Wage decrease by 1$</button>
-
+            <button v-on:dblclick='changeWage(5)'>Wage decrease by 1$</button>
+            <button v-on:dblclick='changeWage(-5)'>Wage decrease by 1$</button>
 
         </div>  
     </div> 
