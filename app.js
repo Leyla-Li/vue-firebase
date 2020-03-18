@@ -10,6 +10,10 @@ new Vue({
     methods: {
         greet(time){
             return `Hello ${this.name} and Good ${time}!`;
+        },
+
+        changeWage(amount){
+            this.wage += amount;
         }
     }
 })
