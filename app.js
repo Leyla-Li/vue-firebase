@@ -2,7 +2,9 @@ new Vue({
     el: '#app',
     data: {
         title: 'Learning Vue',
-        name: 'Leyla'
+        name: 'Leyla',
+        url: 'http://www.youtube.com',
+        classes: ['one', 'two']
     },
     methods: {
         greet(time){
