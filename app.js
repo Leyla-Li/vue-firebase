@@ -14,6 +14,10 @@ new Vue({
 
         changeWage(amount){
             this.wage += amount;
+        },
+
+        logEvent(e){
+            console.log(e);
         }
     }
 })
