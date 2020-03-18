@@ -5,7 +5,11 @@ new Vue({
         name: 'Leyla',
         url: 'http://www.youtube.com',
         classes: ['one', 'two'],
-        wage: 10
+        wage: 10,
+        coords: {
+            x: 0,
+            y: 0
+        }
     },
     methods: {
         greet(time){
@@ -18,6 +22,11 @@ new Vue({
 
         logEvent(e){
             console.log(e);
+        },
+
+        logCoords(e){
+            this.coords.x = e.offsetX
+            this.coords.y = e.offsetY
         }
     }
 })

@@ -37,7 +37,8 @@
         
         <h2>Event Object</h2>
         <button @click='logEvent'>Log Event Info</button>
-        <div class='canvas'>
+        <div class='canvas' @mousemove='logCoords'>
+            {{ coords.x }}, {{ coords.y }}
         </div>
     </div> 
 
