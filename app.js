@@ -5,8 +5,8 @@ new Vue({
         name: 'Leyla'
     },
     methods: {
-        greet(){
-            return `Go ${this.name}!`;
+        greet(time){
+            return `Hello ${this.name} and Good ${time}!`;
         }
     }
 })
