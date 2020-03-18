@@ -17,6 +17,12 @@
         <a v-bind:href='url'>Youtube</a>
         <div v-bind:class='classes'>Classes from Instance</div> 
         <input type='text' :value='name'>
+
+        <h2>Events</h2> 
+        <div>
+            <p>I earn {{  wage }} per hour.</p>
+            <button v-on:click='wage++'>Wage increate by 1$</button>   
+        </div>  
     </div> 
 
     <script src='./app.js'></script>

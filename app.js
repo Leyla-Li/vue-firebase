@@ -4,7 +4,8 @@ new Vue({
         title: 'Learning Vue',
         name: 'Leyla',
         url: 'http://www.youtube.com',
-        classes: ['one', 'two']
+        classes: ['one', 'two'],
+        wage: 10
     },
     methods: {
         greet(time){
