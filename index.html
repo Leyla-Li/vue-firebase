@@ -7,6 +7,13 @@
         .one{
             color: green;
         }
+
+        .canvas{
+            width: 300px;
+            height: 300px;
+            margin-top: 20px;
+            background-color: #ddd;
+        }
     </style>
 </head>
 <body>
@@ -17,6 +24,22 @@
         <a v-bind:href='url'>Youtube</a>
         <div v-bind:class='classes'>Classes from Instance</div> 
         <input type='text' :value='name'>
+
+        <h2>Events</h2> 
+        <div>
+            <p>I earn {{  wage }} per hour.</p>
+            <button v-on:click='changeWage(1)'>Wage increase by 1$</button>   
+            <button v-on:click='wage--'>Wage decrease by 1$</button>
+            <button v-on:dblclick='changeWage(5)'>Wage decrease by 1$</button>
+            <button v-on:dblclick='changeWage(-5)'>Wage decrease by 1$</button>
+
+        </div> 
+        
+        <h2>Event Object</h2>
+        <button @click='logEvent'>Log Event Info</button>
+        <div class='canvas' @mousemove='logCoords'>
+            {{ coords.x }}, {{ coords.y }}
+        </div>
     </div> 
 
     <script src='./app.js'></script>
