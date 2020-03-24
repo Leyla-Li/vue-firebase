@@ -11,7 +11,8 @@ new Vue({
             y: 0
         },
         bindingName:'Ian',
-        showName: false
+        showName: false,
+        showAge: true
     },
     methods: {
         greet(time){
@@ -42,6 +43,10 @@ new Vue({
 
         toggleName(){
             this.showName = !this.showName;
+        },
+
+        toggleAge(){
+            this.showAge = !this.showAge;
         }
     }
 })
