@@ -40,6 +40,13 @@
         <div class='canvas' @mousemove='logCoords'>
             {{ coords.x }}, {{ coords.y }}
         </div>
+
+        <h2>Keyboard Events</h2>
+        <div>
+            <h3>{{  title  }}</h3>   
+            <p>My name is {{ name }}</p> 
+            <input type='text' @keyup='updateName' />
+        </div>
     </div> 
 
     <script src='./app.js'></script>
