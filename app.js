@@ -10,7 +10,8 @@ new Vue({
             x: 0,
             y: 0
         },
-        bindingName:'Ian'
+        bindingName:'Ian',
+        showName: false
     },
     methods: {
         greet(time){
