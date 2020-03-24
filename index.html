@@ -70,7 +70,7 @@
         <div>
             <p v-if='showName'>Sushi</p> 
             <button @click='toggleName'>ShowName: {{  showName }}</button>
-            <p v-if='showAge'>26</p> 
+            <p v-else-if='showAge'>26</p> 
             <button @click='toggleAge'>ShowName: {{  showAge }}</button>
         </div>
     </div> 
