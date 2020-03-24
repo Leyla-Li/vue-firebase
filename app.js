@@ -13,7 +13,12 @@ new Vue({
         bindingName:'Ian',
         showName: false,
         showAge: true,
-        items: ['Apple', 'Banana', 'Grapes', 'Mango']
+        items: ['Apple', 'Banana', 'Grapes', 'Mango'],
+        ninjas: [
+            {name: 'Ana', age: 29, belt: 'White'},
+            {name: 'Bella', age: 24, belt: 'Orange'},
+            {name: 'Peter', age: 39, belt: 'Black'}
+        ]
     },
     methods: {
         greet(time){
