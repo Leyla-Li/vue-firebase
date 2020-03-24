@@ -12,7 +12,8 @@ new Vue({
         },
         bindingName:'Ian',
         showName: false,
-        showAge: true
+        showAge: true,
+        items: ['Apple', 'Banana', 'Grapes', 'Mango']
     },
     methods: {
         greet(time){
