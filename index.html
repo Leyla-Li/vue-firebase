@@ -46,6 +46,8 @@
             <h3>{{  title  }}</h3>   
             <p>My name is {{ name }}</p> 
             <input type='text' @keyup='updateName' />
+            <!-- always one letter behind -->
+            <input type='text' @keypress='updateName' />
         </div>
     </div> 
 
