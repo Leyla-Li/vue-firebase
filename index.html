@@ -80,6 +80,12 @@
                 <li v-for='item in items'>{{ item }}</li>
             </ul>
         </div>
+        <h3>Ninjas</h3>
+        <div v-for='(ninja, index) in ninjas'>
+            <p>{{ index }} - Name: {{ ninja.name }}</p>
+            <p>Age: {{ ninja.age }}</p>
+            <p>Belt Color: {{ ninja.belt }}</p>
+        </div>  
     </div> 
 
     <script src='./app.js'></script>
