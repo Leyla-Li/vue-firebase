@@ -61,7 +61,9 @@
         <h2>Modifiers</h2>
         <div>
             <h3>{{  title  }}</h3>   
-            <button @click='logMessage'>Click me</button>   
+            <button @click.alt='logMessage'>Alt-Click me</button>   
+            <button @click.shift='logMessage'>Shift-Click me</button>   
+            <a href='http://www.google.com' @click='logMessage'>Google</a>
         </div>
     </div> 
 
