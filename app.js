@@ -38,6 +38,10 @@ new Vue({
 
         logMessage(){
             console.log('hi there');
+        },
+
+        toggleName(){
+            this.showName = !this.showName;
         }
     }
 })
