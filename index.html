@@ -49,6 +49,14 @@
             <!-- always one letter behind -->
             <input type='text' @keypress='updateName' />
         </div>
+
+        <h2>2 way data binding</h2>
+        <div>
+            <h3>{{  title  }}</h3>   
+            <p>My name is {{ bindingName }}</p> 
+            <input type='text' v-model='bindingName' />
+        
+        </div>
     </div> 
 
     <script src='./app.js'></script>

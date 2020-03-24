@@ -9,7 +9,8 @@ new Vue({
         coords: {
             x: 0,
             y: 0
-        }
+        },
+        bindingName:'Ian'
     },
     methods: {
         greet(time){
