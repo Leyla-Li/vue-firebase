@@ -1,6 +1,7 @@
 <template>
   <div class='blogs'>
     <h2>{{ blogTitle }}</h2>
+    <input type='text' v-model='searchTerm' />
     <div v-for='post in posts' :key='post.id'>
       <h3>{{ post.title }}</h3>
       <p>{{ post.body | snippet }}</p>
@@ -17,12 +18,21 @@ export default {
   data(){
     return{
       blogTitle: 'Leyla\'s blog',
-      posts: []
+      posts: [],
+      searchTerm: ''
     }
   },
 
   methods: {
     
+  },
+
+  cimputed: {
+    filteredPosts(){
+      return this.posts.filter(post => {
+        return post.title.match(this.searchTerm)
+      })
+    }
   },
 // hooks
   created(){
