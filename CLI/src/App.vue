@@ -29,6 +29,7 @@ export default {
 h1 {
   font-weight: normal;
   color: pink;
+  text-align: center;
 }
 
 </style>
