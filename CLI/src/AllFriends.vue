@@ -10,13 +10,10 @@
 <script>
 export default {
   name:'Allfriends',
+  props: ['friends'],
   data () {
     return {
-      friends: [
-        { name: 'Leyla', online: true},
-        { name: 'Ian', online: false},
-        { name: 'Sushi', online: true}
-      ]
+      
     }
   }
 }
