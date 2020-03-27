@@ -2,7 +2,8 @@
   <div id="app">
     <h1>{{ title }}</h1> 
     <Navbar />
-    <AllFriends :friends='friends' />
+    <!-- without the : then it will see friends as a string to pass in as prop -->
+    <AllFriends :friends='friends' @delete='deleteFriend' />
     <OnlinedFriends :friends='friends' />
   </div>
 </template>
@@ -29,6 +30,13 @@ export default {
         { name: 'Sushi', online: true}
       ]
       
+    }
+  },
+  methods: {
+    deleteFriend(payload){
+      this.friends = this.friends.filter(friend => {
+        return friend.name !== payload.name
+      })
     }
   }
 }

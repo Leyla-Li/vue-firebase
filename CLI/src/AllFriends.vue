@@ -2,7 +2,7 @@
   <div id="all-friends">
     <h2>All friends</h2>
     <div v-for='(friend,index) in friends' :key='index'>
-      <spam>{{ friend.name }}</spam>
+      <spam @click='unfriend(friend.name)'>{{ friend.name }}</spam>
     </div>
   </div>
 </template>
@@ -14,6 +14,11 @@ export default {
   data () {
     return {
       
+    }
+  },
+  methods: {
+    unfriend(name){
+      this.$emit('delete', { name })
     }
   }
 }
