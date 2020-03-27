@@ -21,6 +21,7 @@ export default {
 </script>
 
 <style>
+/* scoped made this style rules only apply to this component, if without scoped it will apply to everywhere in this app, we can also just use class to control it */
 nav{
     text-align: center;
 }
