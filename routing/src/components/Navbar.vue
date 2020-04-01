@@ -15,7 +15,7 @@
 
         <h2>Navigation Controls</h2>
         <ul>
-          <li><button>Redirect to Home</button></li>
+          <li><button @click="goHome">Redirect to Home</button></li>
         </ul>
     </nav>
 </template>
@@ -27,6 +27,11 @@ export default {
         return{
           userIds: ['1', '2', '3', '4']
         }
+    },
+    methods: {
+      goHome(){
+        this.$router.push({ name: 'Home' })
+      }
     }
 }
 </script>
