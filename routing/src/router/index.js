@@ -7,6 +7,8 @@ import ViewProfile from "@/components/ViewProfile"
 Vue.use(Router)
 
 export default new Router({
+  //we can get rid of the # in the link
+  mode:'history',
   routes: [
     {
       path: "/",
