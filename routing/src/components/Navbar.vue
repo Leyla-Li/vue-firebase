@@ -12,6 +12,11 @@
             </router-link>
           </li>
         </ul>
+
+        <h2>Navigation Controls</h2>
+        <ul>
+          <li><button>Redirect to Home</button></li>
+        </ul>
     </nav>
 </template>
 
