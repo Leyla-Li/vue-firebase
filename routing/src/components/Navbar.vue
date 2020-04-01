@@ -15,6 +15,7 @@
 
         <h2>Navigation Controls</h2>
         <ul>
+          <li><button @click="goBack">Go Back</button></li>
           <li><button @click="goHome">Redirect to Home</button></li>
         </ul>
     </nav>
@@ -31,6 +32,10 @@ export default {
     methods: {
       goHome(){
         this.$router.push({ name: 'Home' })
+      },
+
+      goBack(){
+        this.$router.go(-1)
       }
     }
 }
