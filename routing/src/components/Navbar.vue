@@ -57,5 +57,10 @@ a{
     color: lightblue;
 }
 
+li{
+  display: inline-block;
+  margin: 10px;
+}
+
 </style>
 
