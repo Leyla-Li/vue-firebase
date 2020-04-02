@@ -2,6 +2,7 @@
   <div class="index container">
     <div class="card" v-for="smoothie in smoothies" :key="smoothie.id">
       <div class="card-content">
+        <i class="material-icons delete">delete</i> 
         <h2 class="indigo-text">{{ smoothie.title }}</h2>
         <ul class="ingredients">
           <li v-for="(ingredient,idx) in smoothie.ingredients" :key="idx">
@@ -48,5 +49,13 @@ export default {
 
 .index .ingredients li{
   display: inline-block;
+}
+
+.index .delete{
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  cursor: pointer;
+  color: lightgray;
 }
 </style>
