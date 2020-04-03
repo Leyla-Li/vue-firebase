@@ -9,7 +9,7 @@
 
       <div class="field add-ingredients">
         <label for="add-ingredient">Add an ingredient:</label>
-        <input  type="text" name="add-ingredient" @keydown.tab="addIngredient" v-model="another" />
+        <input  type="text" name="add-ingredient" @keydown.tab.prevent="addIngredient" v-model="another" />
       </div>
 
       <div class="field center-align">
