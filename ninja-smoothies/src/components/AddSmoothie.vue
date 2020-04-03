@@ -40,7 +40,7 @@ export default {
     addIngredient(){
       if(this.another){
         this.ingredients.push(this.another)
-        console.log(this.ingredients)
+        this.another = null
       }
     }
   }
