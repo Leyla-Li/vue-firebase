@@ -33,5 +33,19 @@ export default {
 </script>
 
 <style>
+.add-smoothie{
+  margin-top: 60px;
+  padding: 20px;
+  max-width: 500px;
+}
+
+.add-smoothie h2{
+  font-size: 2em;
+  margin: 20px auto;
+}
+
+.add-smoothie .field{
+  margin: 20px auto;
+}
 
 </style>
