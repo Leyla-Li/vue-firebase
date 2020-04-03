@@ -7,6 +7,11 @@
         <input type="text" name="title" v-model="title" />
       </div>
 
+      <div v-for="(ingredient, idx) in ingredients" :key="idx">
+        <label for="ingredient">ingredient:</label>
+        <input type="text" name="ingredient" v-model="ingredients[idx]" />
+      </div>
+
       <div class="field add-ingredients">
         <label for="add-ingredient">Add an ingredient:</label>
         <input  type="text" name="add-ingredient" @keydown.tab.prevent="addIngredient" v-model="another" />
@@ -36,7 +41,7 @@ export default {
 
   methods: {
     AddSmoothie(){
-      console.log(this.title)
+      console.log(this.title, this.ingredients)
     },
 
     addIngredient(){
