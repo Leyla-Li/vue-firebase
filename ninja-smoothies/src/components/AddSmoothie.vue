@@ -7,7 +7,7 @@
         <input type="text" name="title" v-model="title" />
       </div>
 
-      <div v-for="(ingredient, idx) in ingredients" :key="idx">
+      <div v-for="(ingredient, idx) in ingredients" :key="idx" class="field">
         <label for="ingredient">ingredient:</label>
         <input type="text" name="ingredient" v-model="ingredients[idx]" />
         <i class="material-icons delete" @click="deleteIngredient(ingredient)">delete</i>
@@ -102,6 +102,16 @@ export default {
 
 .add-smoothie .field{
   margin: 20px auto;
+  position: relative;
+}
+
+.add-smoothie .delete{
+  position: absolute;
+  right: 0;
+  bottom: 16px;
+  color: #aaa;
+  font-size: 1.4em;
+  cursor: pointer;
 }
 
 </style>
