@@ -10,10 +10,11 @@
       <div v-for="(ingredient, idx) in ingredients" :key="idx">
         <label for="ingredient">ingredient:</label>
         <input type="text" name="ingredient" v-model="ingredients[idx]" />
+        <i class="material-icons delete" @click="deleteIngredient(ingredient)">delete</i>
       </div>
 
       <div class="field add-ingredients">
-        <label for="add-ingredient">Add an ingredient:</label>
+        <label for="add-ingredient">Add an ingredient(confirm or add more ingredients by pressing Tab):</label>
         <input  type="text" name="add-ingredient" @keydown.tab.prevent="addIngredient" v-model="another" />
       </div>
 
@@ -52,12 +53,17 @@ export default {
           remove: /[$*_+~.()'"!\-:@]/g,
           lower: true
         })
-        console.log(this.slug)
-        // db.collection('smoothies').add({
-        //   title: this.title,
-        //   ingredients: this.ingredients,
-        //   slug: this.slug
-        // })
+        db.collection('smoothies').add({
+          title: this.title,
+          ingredients: this.ingredients,
+          slug: this.slug
+        })
+          .then(() => {
+            this.$router.push({ name: 'Index' })
+          })
+          .catch(err => {
+            console.log(err)
+          })
       }else{
         this.feedback = 'You must enter a smoothie title'
       }
@@ -71,6 +77,12 @@ export default {
       }else{
         this.feedback = 'You must enter a value to add an ingredient'
       }
+    },
+
+    deleteIngredient(ing){
+      this.ingredients = this.ingredients.filter(ingredient => {
+        return ingredient !== ing
+      })
     }
   }
 }
