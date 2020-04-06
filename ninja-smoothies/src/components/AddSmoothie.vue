@@ -67,7 +67,7 @@ export default {
       }else{
         this.feedback = 'You must enter a smoothie title'
       }
-  },
+    },
 
     addIngredient(){
       if(this.another){
