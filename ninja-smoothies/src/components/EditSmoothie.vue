@@ -42,6 +42,10 @@ export default {
   },
 
   methods: {
+    EditSmoothie(){
+      console.log(this.smoothie.title, this.smoothie.ingredients)
+    },
+
     addIngredient(){
       if(this.another){
         this.smoothie.ingredients.push(this.another)
