@@ -1,6 +1,6 @@
 <template>
-  <div class="edit-smoothie container">
-    <h2>Edit {{ this.$route.params.smoothie_slug }}</h2>
+  <div v-if="smoothie" class="edit-smoothie container">
+    <h2>Edit {{ smoothie.title }} Smoothie</h2>
   </div>
 </template>
 
