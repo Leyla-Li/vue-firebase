@@ -30,6 +30,7 @@ export default {
           name: this.name,
           timestamp: Date.now()
         })
+          .catch(err => {console.log(err)})
       }else{
         this.feedback = 'You must enter a message before sending'
       }
