@@ -24,6 +24,7 @@
 
 <script>
 import NewMessage from '@/components/NewMessage'
+import db from '@/firebase/init'
 
 export default {
   name: 'Chat',
@@ -35,6 +36,12 @@ export default {
     return {
 
     }
+  },
+  created(){
+    let ref = db.collection('messages')
+    ref.onSnapshot(snapshot => {
+      console.log(snapshot.docChanges())
+    })
   }
 }
 </script>
