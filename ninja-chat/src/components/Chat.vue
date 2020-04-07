@@ -30,17 +30,27 @@ export default {
   name: 'Chat',
   props: ['name'],
   components: {
-    NewMessage
+    NewMessage,
   },
   data(){
     return {
-
+      messages
     }
   },
   created(){
     let ref = db.collection('messages')
     ref.onSnapshot(snapshot => {
-      console.log(snapshot.docChanges())
+      docChanges().forEach(change => {
+        if(change.type === 'added'){
+          let doc = change.doc
+          this.messages.push({
+            id: doc.id,
+            name: doc.data().name,
+            content: doc.data().content,
+            timestamp: doc.data().timestamp
+          })
+        }
+      })
     })
   }
 }
