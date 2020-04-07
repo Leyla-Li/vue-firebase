@@ -83,11 +83,11 @@ export default {
 }
 
 .messages::-webkit-scrollbar-track{
-  background: #ddd;
+  background: pink;
 }
 
-.messages::-webkit-slider-thumb{
-  background: #aaa;
+.messages::-webkit-scrollbar-thumb{
+  background:yellow;
 }
 
 </style>
