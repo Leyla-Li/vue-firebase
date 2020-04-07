@@ -1,15 +1,15 @@
 <template>
-  <div class="hello">
-    
+  <div class="map">
+    <h2>Map</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  data () {
+  name:'GMap',
+  data(){
     return {
-      
+
     }
   }
 }
