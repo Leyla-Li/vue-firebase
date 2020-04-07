@@ -44,6 +44,8 @@ export default {
 
 .chat .time{
   display: block;
+  font-size: 1.2em;
+
 }
 
 </style>
