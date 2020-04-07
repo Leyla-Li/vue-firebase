@@ -14,13 +14,18 @@ export default {
   props: ['name'],
   data(){
     return{
-      newMessage: null
+      newMessage: null,
+      feedback: null
     }
   },
 
   methods: {
     addMessage(){
-      console.log(this.newMessage, this.name, Date.now())
+      if(this.newMessage){
+        db.collection()
+      }else{
+        this.feedback = 'You must enter a message before sending'
+      }
     }
   }
 }
