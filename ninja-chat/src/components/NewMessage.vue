@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import db from '@/firebase/init'
+
 export default {
   name: 'NewMessage',
   props: ['name'],
@@ -23,7 +25,11 @@ export default {
   methods: {
     addMessage(){
       if(this.newMessage){
-        db.collection()
+        db.collection('messages').add({
+          content: this.newMessage,
+          name: this.name,
+          timestamp: Date.now()
+        })
       }else{
         this.feedback = 'You must enter a message before sending'
       }
