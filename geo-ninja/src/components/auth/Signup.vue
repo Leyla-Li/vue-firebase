@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import slugify from 'slugify'
+
 export default {
   name: 'Signup',
   data(){
@@ -30,14 +32,20 @@ export default {
       email: null,
       password: null,
       alias: null,
-      feedback: null
+      feedback: null,
+      slug: null
     }
   },
 
   methods:{
     signup(){
       if(this.alias){
-        
+        this.slug = slugify(this.alias, {
+          replacement: '-',
+          remove: /[$*_+~.()'"!\-:@]/g,
+          lower: true
+        })
+        console.log(this.slug)
       }else{
         this.feedback = 'You must enter an alias'
       }
