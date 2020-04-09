@@ -12,7 +12,10 @@
       </div>
       <div class="field">
         <label for="alias">Alias:</label>
-        <input type="alias" name="alias">
+        <input type="text" name="alias">
+      </div>
+      <div class="field center">
+        <button class="btn deep-purple">Signup</button>
       </div>
     </form>
   </div>
@@ -30,5 +33,9 @@ export default {
 </script>
 
 <style>
+.signup{
+  max-width: 400px;
+  margin-top: 60px;
+}
 
 </style>
