@@ -56,11 +56,10 @@ export default {
             }else{
               firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
                 .then(cred => {
-                  console.log(cred.user)
                   ref.set({
                     alias: this.alias,
                     geolocation: null,
-                    user_id: user.uid
+                    user_id: cred.user.uid
                   })
                 })
                 .then(() => {
