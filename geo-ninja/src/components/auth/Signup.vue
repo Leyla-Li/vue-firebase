@@ -24,6 +24,7 @@
 
 <script>
 import slugify from 'slugify'
+import db from '@/firebase/init'
 
 export default {
   name: 'Signup',
@@ -45,7 +46,16 @@ export default {
           remove: /[$*_+~.()'"!\-:@]/g,
           lower: true
         })
-        console.log(this.slug)
+        
+        let ref = db.collection('users').doc(this.slug)
+        ref.get()
+          .then(doc => {
+            if(doc.exists){
+              this.feedback = 'This alias already exists'
+            }else{
+              this.feedback = 'This alias is free to use'
+            }
+          })
       }else{
         this.feedback = 'You must enter an alias'
       }
