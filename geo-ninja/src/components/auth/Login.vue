@@ -1,6 +1,6 @@
 <template>
   <div class="login container">
-    <form class="card-panel">
+    <form class="card-panel" @submit.prevent="login">
       <h2 class="center deep-purple-text">Login</h2>
       <div class="field">
         <label for="email">E-mail:</label>
@@ -30,7 +30,9 @@ export default {
   },
 
   methods: {
-    
+    login(){
+      console.log(this.email, this.password)
+    }
   }
 }
 </script>
