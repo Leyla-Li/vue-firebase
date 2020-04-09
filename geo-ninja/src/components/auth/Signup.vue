@@ -63,6 +63,9 @@ export default {
                     user_id: user.uid
                   })
                 })
+                .then(() => {
+                  this.$router.push({name: 'GMap'})
+                })
                 .catch(err => {
                   console.log(err)
                   this.feedback = err.message
