@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+
 export default {
   name: 'Login',
   data(){
@@ -31,7 +33,8 @@ export default {
 
   methods: {
     login(){
-      console.log(this.email, this.password)
+      firebase.auth().login()
+        .then()
     }
   }
 }
