@@ -55,6 +55,14 @@ export default {
               this.feedback = 'This alias already exists'
             }else{
               firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+                .then(cred => {
+                  console.log(cred.user)
+                  ref.set({
+                    alias: this.alias,
+                    geolocation: null,
+                    user_id: user.uid
+                  })
+                })
                 .catch(err => {
                   console.log(err)
                   this.feedback = err.message
