@@ -54,6 +54,11 @@ export default {
             if(doc.exists){
               this.feedback = 'This alias already exists'
             }else{
+              firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+                .catch(err => {
+                  console.log(err)
+                  this.feedback = err.message
+                })
               this.feedback = 'This alias is free to use'
             }
           })
