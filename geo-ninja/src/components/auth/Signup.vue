@@ -14,6 +14,7 @@
         <label for="alias">Alias:</label>
         <input type="text" name="alias" v-model="alias">
       </div>
+      <p class="red-text center" v-if="feedback">{{ feedback }}</p>
       <div class="field center">
         <button class="btn deep-purple">Signup</button>
       </div>
@@ -28,13 +29,18 @@ export default {
     return {
       email: null,
       password: null,
-      alias: null
+      alias: null,
+      feedback: null
     }
   },
 
   methods:{
     signup(){
-      
+      if(this.alias){
+        
+      }else{
+        this.feedback = 'You must enter an alias'
+      }
     }
   }
 }
