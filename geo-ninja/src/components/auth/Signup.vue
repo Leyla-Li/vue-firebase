@@ -1,18 +1,18 @@
 <template>
   <div class="signup container">
-    <form class="card-panel">
+    <form class="card-panel" @submit.prevent="signup">
       <h2 class="center deep-purple-text">Signup</h2>
       <div class="field">
         <label for="email">E-mail:</label>
-        <input type="email" name="email">
+        <input type="email" name="email" v-model="email">
       </div>
       <div class="field">
         <label for="password">Password:</label>
-        <input type="password" name="password">
+        <input type="password" name="password" v-model="password">
       </div>
       <div class="field">
         <label for="alias">Alias:</label>
-        <input type="text" name="alias">
+        <input type="text" name="alias" v-model="alias">
       </div>
       <div class="field center">
         <button class="btn deep-purple">Signup</button>
@@ -26,7 +26,15 @@ export default {
   name: 'Signup',
   data(){
     return {
+      email: null,
+      password: null,
+      alias: null
+    }
+  },
 
+  methods:{
+    signup(){
+      
     }
   }
 }
