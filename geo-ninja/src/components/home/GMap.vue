@@ -29,8 +29,18 @@ export default {
   },
 
   mounted(){
-    this.renderMap()
-    console.log(firebase.auth().currentUser)
+    //get user's geolocation
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(pos => {
+        this.lat = pos.coords.latitude
+        this.lng = pos.coords.longitude
+        this.renderMap()
+      }, err => {
+        console.log(err)
+        this.renderMap()
+      })
+    }
+    
   
   },
 }
