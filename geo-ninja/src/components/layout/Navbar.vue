@@ -11,6 +11,9 @@
             <router-link :to="{name: 'Login'}">Login</router-link>
           </li>
           <li v-if="user">
+            <a>{{ user.email }}</a>
+          </li>
+          <li v-if="user">
             <a @click="logout">Logout</a>
           </li>
         </ul>
