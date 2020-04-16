@@ -26,7 +26,7 @@ export default {
   name: 'Navbar',
   data(){
     return {
-
+      user: null
     }
   },
 
@@ -37,6 +37,15 @@ export default {
           this.$router.push({name: 'Login'})
         })
     }
+  },
+  created(){
+    firebase.auth().onAuthStateChanged(user => {
+      if(user){
+        this.user = user
+      }else{
+        this.user = null
+      }
+    })
   }
 }
 </script>
