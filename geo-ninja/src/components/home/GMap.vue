@@ -39,6 +39,10 @@ export default {
                 },
                 map
               })
+              //add click event to marker
+              marker.addListener('click', () => {
+                
+              })
             }
           })
         })
