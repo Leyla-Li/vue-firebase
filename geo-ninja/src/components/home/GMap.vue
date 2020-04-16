@@ -40,7 +40,12 @@ export default {
         this.lng = pos.coords.longitude
 
         //find the user record and then update geocoords
-        let ref = db.collection('users').where('user_id', '==', user.uid)
+        db.collection('users').where('user_id', '==', user.uid).get()
+          .then(snapshot => {
+            snapshot.forEach(doc => {
+              console.log(doc.id)
+            })
+          })
         this.renderMap()
       }, err => {
         console.log(err)
