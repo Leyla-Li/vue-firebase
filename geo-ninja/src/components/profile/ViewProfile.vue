@@ -12,7 +12,9 @@ import db from '@/firebase/init'
 export default {
   name: 'ViewProfile',
   data(){
-    profile: null
+    return{
+      profile: null
+    }
   },
 
   created() {
