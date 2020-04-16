@@ -38,10 +38,11 @@ export default {
       }, err => {
         console.log(err)
         this.renderMap()
-      })
+      }, { maximumAge: 6000, timeout: 3000 })
+    }else {
+      //position center by default values
+      this.renderMap()
     }
-    
-  
   },
 }
 </script>
