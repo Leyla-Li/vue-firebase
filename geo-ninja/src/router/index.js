@@ -31,7 +31,10 @@ const router = new Router({
     {
       path: '/profile/:id',
       name: 'ViewProfile',
-      component: ViewProfile
+      component: ViewProfile,
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
 })
