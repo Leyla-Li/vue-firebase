@@ -4,13 +4,13 @@
       <div class="container">
         <router-link :to="{name: 'GMap'}">GeoNinjas</router-link>
         <ul class="right">
-          <li>
+          <li v-if="!user">
             <router-link :to="{name: 'Signup'}">Signup</router-link>
           </li>
-          <li>
+          <li v-if="!user">
             <router-link :to="{name: 'Login'}">Login</router-link>
           </li>
-          <li>
+          <li v-if="user">
             <a @click="logout">Logout</a>
           </li>
         </ul>
