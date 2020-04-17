@@ -9,6 +9,7 @@
         <div class="field">
           <label for="comment">Add a comment</label>
           <input type="text" name="comment" v-model="newComment" />
+          <p class="red-text center" v-if="feedback">{{ feedback }}</p>
         </div>
       </form>
     </div>
@@ -22,7 +23,22 @@ export default {
   name: 'ViewProfile',
   data(){
     return{
-      profile: null
+      profile: null,
+      newComment: null,
+      feedback: null
+    }
+  },
+
+  methods: {
+    addComment(){
+      if(this.newComment){
+        this.feedback = null
+        db.collection('comments').add({
+          
+        })
+      }else{
+        this.feedback = 'Please enter a comment'
+      }
     }
   },
 
