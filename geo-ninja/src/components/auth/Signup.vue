@@ -52,28 +52,27 @@ export default {
         let checkAlias = firebase.functions().httpsCallable('checkAlias')
         checkAlias({ slug: this.slug })
           .then(result => {
-            console.log(result)
-          
-            // if(doc.exists){
-            //   this.feedback = 'This alias already exists'
-            // }else{
-            //   firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-            //     .then(cred => {
-            //       ref.set({
-            //         alias: this.alias,
-            //         geolocation: null,
-            //         user_id: cred.user.uid
-            //       })
-            //     })
-            //     .then(() => {
-            //       this.$router.push({name: 'GMap'})
-            //     })
-            //     .catch(err => {
-            //       console.log(err)
-            //       this.feedback = err.message
-            //     })
-            //   this.feedback = 'This alias is free to use'
-            // }
+            
+            if(!result.data.unique){
+              this.feedback = 'This alias already exists'
+            }else{
+              firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+                .then(cred => {
+                  db.collection('users').doc(this.slug).set({
+                    alias: this.alias,
+                    geolocation: null,
+                    user_id: cred.user.uid
+                  })
+                })
+                .then(() => {
+                  this.$router.push({name: 'GMap'})
+                })
+                .catch(err => {
+                  console.log(err)
+                  this.feedback = err.message
+                })
+              this.feedback = 'This alias is free to use'
+            }
           })
       }else{
         this.feedback = 'You must enter all fields'
