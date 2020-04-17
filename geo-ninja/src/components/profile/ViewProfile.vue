@@ -18,6 +18,7 @@
 
 <script>
 import db from '@/firebase/init'
+import firebase from 'firebase'
 
 export default {
   name: 'ViewProfile',
@@ -25,7 +26,8 @@ export default {
     return{
       profile: null,
       newComment: null,
-      feedback: null
+      feedback: null,
+      user: null
     }
   },
 
@@ -35,7 +37,7 @@ export default {
         this.feedback = null
         db.collection('comments').add({
           to: this.$route.params.id,
-          from: ,
+          from: this.user.id,
           content: this.newComment,
           time: Date.now()
         })
@@ -50,6 +52,15 @@ export default {
 
   created() {
     let ref = db.collection('users')
+    //get current user
+    ref.where('user_id', '==', firebase.auth().currentUser.uid).get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+          this.user = doc.data()
+          this.user.id = doc.id
+        })
+      })
+
     ref.doc(this.$route.params.id).get()
       .then(user => {
         this.profile = user.data()
