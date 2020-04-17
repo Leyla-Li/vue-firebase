@@ -3,7 +3,10 @@
     <div v-if="profile" class="card">
       <h2 class="deep-purple-text center">{{profile.alias}}'s Wall</h2>
       <ul class="comments collection">
-        <li>Comment</li>
+        <li v-for="(comment, idx) in comments" :key="idx">
+          <div class="deep-purple-text">{{ comment.from }}</div>
+          <div class="grey-text text-darken-2">{{ comment.content }}</div>
+        </li>
       </ul>
       <form @submit.prevent="addComment">
         <div class="field">
