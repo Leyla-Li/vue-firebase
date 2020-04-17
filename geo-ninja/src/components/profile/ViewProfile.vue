@@ -41,7 +41,7 @@ export default {
         this.feedback = null
         db.collection('comments').add({
           to: this.$route.params.id,
-          from: this.user.id,
+          from: this.user.alias,
           content: this.newComment,
           time: Date.now()
         })
@@ -89,5 +89,19 @@ export default {
 </script>
 
 <style>
+.view-profile .card{
+  padding: 2-px;
+  margin-top: 60px;
+}
+
+.view-profile h2{
+  font-size: 2em;
+  margin-top: 0;
+}
+
+.view-profile li{
+  padding: 10px;
+  border-bottome: 1px solid grey;
+}
 
 </style>
