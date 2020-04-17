@@ -27,7 +27,8 @@ export default {
       profile: null,
       newComment: null,
       feedback: null,
-      user: null
+      user: null,
+      comments: []
     }
   },
 
@@ -61,10 +62,25 @@ export default {
         })
       })
 
+    //profile data
     ref.doc(this.$route.params.id).get()
       .then(user => {
         this.profile = user.data()
       })
+
+    //comments
+    db.collection('comments').where('to','==', this.$route.params.id)
+    .onSnapshot(snapshot => {
+      snapshot.docChanges().forEach(change => {
+        if(change.type == 'added'){
+          this.comments.unshift({
+            from: change.doc.data().from,
+            content: change.doc.data().content,
+            time: change.doc.data().time
+          })
+        }
+      })
+    })  
   }
 }
 </script>
