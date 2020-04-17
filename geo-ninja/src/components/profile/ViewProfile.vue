@@ -34,8 +34,14 @@ export default {
       if(this.newComment){
         this.feedback = null
         db.collection('comments').add({
-          
+          to: this.$route.params.id,
+          from: ,
+          content: this.newComment,
+          time: Date.now()
         })
+          .then(() => {
+            this.newComment = null
+          })
       }else{
         this.feedback = 'Please enter a comment'
       }
